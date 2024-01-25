@@ -34,7 +34,7 @@ class Ejercicio1: AppCompatActivity() {
             override fun onTick(millisUntilFinished: Long) {
                 // Se llama cada segundo mientras el temporizador está en marcha
                 val segundosRestantes = millisUntilFinished / 1000
-                tvEjercicio1.text = "Tiempo restante: $segundosRestantes segundos"
+                tvEjercicio1.text = "$segundosRestantes"
             }
 
             override fun onFinish() {
@@ -48,9 +48,15 @@ class Ejercicio1: AppCompatActivity() {
     }
 
     override fun onDestroy() {
+        super.onDestroy()
         // Asegúrate de detener el temporizador cuando la actividad se destruye
         countDownTimer.cancel()
-        super.onDestroy()
+    }
+
+    override fun onPause() {
+        super.onPause()
+        // Asegúrate de detener el temporizador cuando la actividad se pausa
+        countDownTimer.cancel()
     }
 
 
