@@ -1,7 +1,9 @@
 package com.example.seminario3_di
 
+import android.content.Intent
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.os.Handler
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.example.seminario3_di.databinding.ActivityEjercicio1Binding
@@ -21,7 +23,7 @@ class Ejercicio1: AppCompatActivity() {
         tvEjercicio1 = binding.tvEjercicio1
 
 
-        val tiempoTotal: Long = 10000
+        val tiempoTotal: Long = 3000
 
         // Inicia el temporizador
         iniciarTemporizador(tiempoTotal)
@@ -39,12 +41,17 @@ class Ejercicio1: AppCompatActivity() {
 
             override fun onFinish() {
                 // Se llama cuando el temporizador llega a cero
-                tvEjercicio1.text = "¡Tiempo agotado!"
+
+                val intent = Intent(this@Ejercicio1, Ejercicio1Boom::class.java)
+                startActivity(intent)
+
             }
-        }
 
         // Inicia el temporizador
-        countDownTimer.start()
+        }.start()
+
+
+
     }
 
     override fun onDestroy() {

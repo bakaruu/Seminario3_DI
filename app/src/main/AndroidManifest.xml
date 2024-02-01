@@ -26,6 +26,21 @@
             android:name=".Ejercicio1"
             android:exported="false">
             </activity>
+
+        <activity
+            android:name=".Ejercicio1Boom"
+            android:exported="false">
+            </activity>
+
+        <activity
+            android:name=".Ejercicio2"
+            android:exported="false">
+            </activity>
+
+        <activity
+            android:name=".Ejercicio3"
+            android:exported="false">
+            </activity>
     </application>
 
 </manifest>
